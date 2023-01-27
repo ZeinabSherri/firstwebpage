@@ -86,7 +86,7 @@ export default function Users() {
                             catagory: user.catagory,
                         },
                     ]);
-                    setUser({ name: "", catagory: "Medium" });
+                    setUser({ name: "", catagory: "First" });
                 }}>
                 Submit
             </Button>

@@ -1,27 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, useRoutes } from "react-router-dom";
-import Notes from "./Pages/Notes";
-import Users from "./Pages/Users";
-import Navbar from "./components/Navbar";
-
-const App = () => {
-    let routes = useRoutes([
-        { path: "/Users.js", element: <Users /> },
-        { path: "/Notes.js", element: <Notes /> },
-    ]);
-    return routes;
-};
-
-const AppWrapper = () => {
+import ResponsiveAppBar from "./components/Nav";
+import { Route, Routes } from "react-router-dom";
+import Users from './Pages/Users';
+import Notes from './Pages/Notes';
+import Home from './Pages/Home';
+ function App()  {
     return (
-        <Router>
-            <Navbar />
-            <App />
-        </Router>
+        <div>
+            <ResponsiveAppBar />
+            <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/Users' element={<Users/>}/>
+            <Route path='/Notes' element={<Notes/>}/>
+            </Routes>
+        </div>
     );
 };
 
-export default AppWrapper;
+export default App;
 
 // import "./App.css";
 // import Navbar from "./components/Navbar";
